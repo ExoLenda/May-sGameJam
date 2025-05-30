@@ -8,4 +8,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/time.unity
+    guid: 9cec321e6c6238b4b90cf44fe9e2bc83
+  - enabled: 1
+    path: Assets/Scenes/times'up.unity
+    guid: b3908447b7c56bd4ca1d659546f81412
+  - enabled: 1
+    path: Assets/Scenes/Final.unity
+    guid: 9f2b25b71334f2446a136f541d036b88
+  - enabled: 1
+    path: Assets/Scenes/Prison/Prison1.unity
+    guid: abbaf0609510c15468ee6743129d5476
+  - enabled: 1
+    path: Assets/Scenes/Prison/Prison2.unity
+    guid: fdeca89cbdf75334192ff4d88ebccb93
+  - enabled: 1
+    path: Assets/Scenes/Prison/Prison3.unity
+    guid: 57db6911a6a1c994a8754d40d92f3d50
+  - enabled: 1
+    path: Assets/Scenes/Prison/Prison4.unity
+    guid: d35a461ec5f4acd4fa95d2d13d0d87f7
   m_configObjects: {}
