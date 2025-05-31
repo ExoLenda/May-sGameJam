@@ -1,1 +1,0 @@
-Link to current documentation: https://docs.google.com/document/d/1cE3smZ-3A-OFzkWw-x5_Mcyb_Xwks3sGRp45oAVtJrg/edit?usp=sharing
