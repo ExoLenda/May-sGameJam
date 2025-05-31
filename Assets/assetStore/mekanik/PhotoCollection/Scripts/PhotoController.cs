@@ -311,6 +311,8 @@ namespace DynamicPhotoCamera
                 Debug.LogError("Screenshot saved to collection. But object recognition is not activated. Consider using the extended version: https://u3d.as/3qTN");
 
                 audioManager.PlayRandomSound(audioManager.shotSounds);
+                FindObjectOfType<ObjectRecognition>().DetectPhotoObjects();
+
             }
             finally
             {
