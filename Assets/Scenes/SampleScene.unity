@@ -191,7 +191,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.623213}
+  m_AnchoredPosition: {x: 0, y: 0.0002241875}
   m_SizeDelta: {x: 0, y: 326.98}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &196266520
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1622320054}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9949224
+  m_Size: 0.999662
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -538,6 +538,7 @@ GameObject:
   - component: {fileID: 731707035}
   - component: {fileID: 731707034}
   - component: {fileID: 731707033}
+  - component: {fileID: 731707036}
   m_Layer: 5
   m_Name: PhotoGalleryPanel
   m_TagString: Untagged
@@ -635,6 +636,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 731707031}
   m_CullTransparentMesh: 1
+--- !u!114 &731707036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731707031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db0c8c851b83257429a5293d8c40b721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  photoCamera: {fileID: 1327558258}
+  detectionRange: 50
 --- !u!1 &1010994821
 GameObject:
   m_ObjectHideFlags: 0
@@ -1206,7 +1221,7 @@ MonoBehaviour:
   photoGallery: []
   maxPhotos: 10
   galleryUIContainer: {fileID: 196266518}
-  photoPrefab: {fileID: 7161479395103161599, guid: e908e4f97059e8144b5bf2ac2ed5f17e, type: 3}
+  photoPrefab: {fileID: 7063086991600078765, guid: 800fcbf77cf50eb4fab6fe764087c84d, type: 3}
 --- !u!1 &1622320053
 GameObject:
   m_ObjectHideFlags: 0
