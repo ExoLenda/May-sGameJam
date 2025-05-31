@@ -6,44 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-<<<<<<< Updated upstream
+    path: Assets/Scenes/MainMenu.unity
+    guid: 9abef4cf559f9ab48ba8311ec65386d2
+  - enabled: 1
+    path: Assets/Scenes/Diologue.unity
+    guid: f491b94f0f3f47744adc83a3525e6592
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-<<<<<<< HEAD
-    path: Assets/Scenes/FinalScene.unity
-    guid: 25ee14d3ebb4d7d4cb827387d1b93611
-  - enabled: 1
-    path: Assets/Scenes/Crime Scene.unity
-    guid: c46bc2d203b7d964fa59dce2aec2ef48
-=======
-    path: Assets/Scenes/MainMenu.unity
-    guid: 22b6d1372b8b639428a3c4777c705a1f
->>>>>>> Stashed changes
-  - enabled: 1
-<<<<<<< Updated upstream
-    path: Assets/Scenes/Diologue.unity
-=======
-    path: Assets/Scenes/PrisonScene_0.unity
-=======
-    path: Assets/Scenes/Crime Scene.unity
-    guid: c46bc2d203b7d964fa59dce2aec2ef48
-=======
-    path: Assets/Scenes/MainMenu.unity
-    guid: 22b6d1372b8b639428a3c4777c705a1f
->>>>>>> Stashed changes
-  - enabled: 1
-    path: Assets/Scenes/Diologue.unity
->>>>>>> b473877dd033f06b2aa1a6c8cc3ab60f5940c5fd
->>>>>>> Stashed changes
-    guid: f491b94f0f3f47744adc83a3525e6592
-  - enabled: 1
-    path: Assets/Scenes/PrisonScene_1.unity
-    guid: ac8a7ab59d5f8864a82adf7753295211
-  - enabled: 1
-    path: Assets/Scenes/PrisonScene_2.unity
-    guid: 1af69087302605c41a275a51c0d98458
-  - enabled: 1
-    path: Assets/Scenes/PrisonScene_3.unity
-    guid: 501445ee0c9aee648a110c6a89c8376c
+    path: Assets/Scenes/Suspects.unity
+    guid: 39136ae30595e3d4fbbf935f3f7728c5
   m_configObjects: {}
