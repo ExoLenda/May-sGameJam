@@ -212,11 +212,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43229176}
   m_CullTransparentMesh: 1
---- !u!1 &60420520 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3672866276023476966, guid: e908e4f97059e8144b5bf2ac2ed5f17e, type: 3}
-  m_PrefabInstance: {fileID: 331633267237914044}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &60420521 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5493974570726669853, guid: e908e4f97059e8144b5bf2ac2ed5f17e, type: 3}
@@ -586,6 +581,10 @@ PrefabInstance:
       propertyPath: currentCamera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 6360382947920477144, guid: 1bfe430be7cd91244881566d561ecdea, type: 3}
+      propertyPath: photoGalleryManager
+      value: 
+      objectReference: {fileID: 545396953}
     - target: {fileID: 6941891157848102728, guid: 1bfe430be7cd91244881566d561ecdea, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -902,7 +901,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   galleryPanel: {fileID: 1250483761}
   photoCardHolder: {fileID: 1945802082}
-  photoDisplayItemPrefab: {fileID: 60420520}
+  photoDisplayItemPrefab: {fileID: 3672866276023476966, guid: e908e4f97059e8144b5bf2ac2ed5f17e, type: 3}
   largePhotoDisplayPanel: {fileID: 1063382316}
   largePhotoViewer: {fileID: 2103147666}
   photoController: {fileID: 1586115692}
