@@ -31,6 +31,7 @@ public class InventoryUI : MonoBehaviour
         ChangeCursorState(false);
         inventoryOpen = true;
         suspectPanel.SetActive(true);
+        OnSuspectsClicked();
     }
 
     private void CloseInventory()
