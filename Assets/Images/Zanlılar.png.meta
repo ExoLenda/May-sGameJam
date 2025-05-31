@@ -123,6 +123,69 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+      name: "Zanl\u0131lar_4"
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 592
+        width: 12
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e25d2587ac9613947b5f6f74bf0de29b
+      internalID: -2018214684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Zanl\u0131lar_6"
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 95
+        width: 296
+        height: 394
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d05ba372efc9fb4baffad5f8da40271
+      internalID: 2082945800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Zanl\u0131lar_8"
+      rect:
+        serializedVersion: 2
+        x: 1421
+        y: 90
+        width: 303
+        height: 399
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa8ae3fa7bb2153499e2a75d6a8e51f8
+      internalID: 785754783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: "Zanl\u0131lar_0"
       rect:
         serializedVersion: 2
@@ -131,13 +194,13 @@ TextureImporter:
         width: 296
         height: 391
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5cb4bad67d4279c4892a41084d471b87
+      spriteID: 4c1ef6b36b6c9674ab0344a1579af0a9
       internalID: -654473510
       vertices: []
       indices: 
@@ -152,13 +215,13 @@ TextureImporter:
         width: 296
         height: 391
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 372d7d62837d36f4696341279f76470e
+      spriteID: ad0b3cf4c1e2b38449e89e98646d1413
       internalID: 1808213576
       vertices: []
       indices: 
@@ -173,13 +236,13 @@ TextureImporter:
         width: 296
         height: 391
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fe5cc052f6b01846af93b4f02b6193d
+      spriteID: 9ec5d0fc9e292e44380d3b0e236e7f3d
       internalID: -633521491
       vertices: []
       indices: 
@@ -194,35 +257,14 @@ TextureImporter:
         width: 296
         height: 395
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e2f97e7a973fdc42adc4be798638d4e
+      spriteID: d151b4c622e0eb841bc883a486c6d406
       internalID: 1637180513
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Zanl\u0131lar_4"
-      rect:
-        serializedVersion: 2
-        x: 876
-        y: 592
-        width: 12
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e25d2587ac9613947b5f6f74bf0de29b
-      internalID: -2018214684
       vertices: []
       indices: 
       edges: []
@@ -236,35 +278,14 @@ TextureImporter:
         width: 297
         height: 391
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ea243595e706654cac88025a2209aa2
+      spriteID: 6c3243c39b722244f9b03af5ae05f23e
       internalID: 199066103
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Zanl\u0131lar_6"
-      rect:
-        serializedVersion: 2
-        x: 613
-        y: 21
-        width: 296
-        height: 466
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9d05ba372efc9fb4baffad5f8da40271
-      internalID: 2082945800
       vertices: []
       indices: 
       edges: []
@@ -278,35 +299,14 @@ TextureImporter:
         width: 296
         height: 391
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad753dcc960b42f45b9358ac62645d74
+      spriteID: 8a0f6c76e8d39d541b2b2aad4f8e9c10
       internalID: -468610140
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Zanl\u0131lar_8"
-      rect:
-        serializedVersion: 2
-        x: 1409
-        y: 90
-        width: 331
-        height: 399
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fa8ae3fa7bb2153499e2a75d6a8e51f8
-      internalID: 785754783
       vertices: []
       indices: 
       edges: []
@@ -320,13 +320,13 @@ TextureImporter:
         width: 29
         height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11d13557e25695646899fe1a9fd6a462
+      spriteID: aef5c1a990202844fa3cd38ca31fe94c
       internalID: -658918172
       vertices: []
       indices: 
