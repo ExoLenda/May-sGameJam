@@ -49,8 +49,8 @@ public class InventoryUI : MonoBehaviour
 
     public void OnSuspectsClicked()
     {
-        suspectTab.SetActive(false);
         suspectTab.SetActive(true);
+        proofTab.SetActive(false);
     }
 
     private void ChangeCursorState(bool lockCursor)
