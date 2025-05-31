@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using System.IO;
 using System;
 using System.Collections.ObjectModel;
+using UnityEngine.EventSystems;
+
 namespace DynamicPhotoCamera
 {
     // Handles individual photo functionality and interactions
@@ -135,6 +137,28 @@ namespace DynamicPhotoCamera
         {
             inputPos.z = 0;
             transform.position = inputPos;
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            // Debug.Log("Fotoðraf kartýna týklandý: " + gameObject.name); // Test için
+
+            // Týklama sesi çal (isteðe baðlý)
+            if (photoController.audioManager != null)
+            {
+                photoController.audioManager.PlayRandomSound(photoController.audioManager.clickSounds);
+            }
+
+            // PhotoGalleryManager'a eriþerek büyütme metodunu çaðýr
+            if (photoController.photoGalleryManager != null) // PhotoController'a PhotoGalleryManager referansý ekleyeceðiz
+            {
+                // Mevcut fotoðraf kartýnýn Sprite'ýný PhotoGalleryManager'a gönder
+                photoController.photoGalleryManager.ViewLargePhoto(thisImage.sprite);
+            }
+            else
+            {
+                Debug.LogWarning("PhotoGalleryManager referansý PhotoController'da atanmamýþ!");
+            }
         }
 
         // Removes photo from system

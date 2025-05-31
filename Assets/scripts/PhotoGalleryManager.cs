@@ -178,7 +178,7 @@ public class PhotoGalleryManager : MonoBehaviour
         }
 
         GameObject photoCard = Instantiate(photoDisplayItemPrefab, photoCardHolder);
-        Image photoImage = photoCard.GetComponent<Image>();
+        Image photoImage = photoCard.GetComponentInChildren<Image>(true);
 
         if (photoImage != null)
         {

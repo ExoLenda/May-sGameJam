@@ -91,6 +91,9 @@ namespace DynamicPhotoCamera
         // Current mouse position
         private Vector2 mousePosition;
 
+        [Tooltip("Galeri yöneticisi script'ine referans.")]
+        public PhotoGalleryManager photoGalleryManager;
+
         #endregion
 
 
@@ -312,7 +315,7 @@ namespace DynamicPhotoCamera
                 uiManager.SetSquare();
                 SortPhotos();
                 inputController.forbiddenInput = true;
-                Debug.LogError("Screenshot saved to collection. But object recognition is not activated. Consider using the extended version: https://u3d.as/3qTN");
+                //Debug.LogError("Screenshot saved to collection. But object recognition is not activated. Consider using the extended version: https://u3d.as/3qTN");
 
 
                 if (OnPhotoCaptureComplete != null) // Event'e abone olan varsa
