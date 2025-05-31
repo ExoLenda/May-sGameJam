@@ -1,5 +1,4 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
 <<<<<<<< Updated upstream:Assets/Scenes/MainMenu.unity.meta
 guid: 22b6d1372b8b639428a3c4777c705a1f
 DefaultImporter:
@@ -9,16 +8,6 @@ NativeFormatImporter:
 >>>>>>>> Stashed changes:Assets/font/BebasNeue-Regular SDF.asset.meta
   externalObjects: {}
   mainObjectFileID: 11400000
-=======
-<<<<<<<< HEAD:Assets/font.meta
-guid: 3601b621cc56c694dbd9c704f3e3ca41
-folderAsset: yes
-========
-guid: 22b6d1372b8b639428a3c4777c705a1f
->>>>>>>> b473877dd033f06b2aa1a6c8cc3ab60f5940c5fd:Assets/Scenes/MainMenu.unity.meta
-DefaultImporter:
-  externalObjects: {}
->>>>>>> Stashed changes
   userData: 
   assetBundleName: 
   assetBundleVariant: 
