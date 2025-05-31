@@ -9,22 +9,57 @@ public class PhotoCaptureAndDetection : MonoBehaviour
 {
     // Dynamic Photo Camera Mini'nin kamera bileþeni
     public Camera photoCamera;
-
+    public DynamicPhotoCamera.PhotoController photoControllerAsset; // Asset'in Namespace'i ve Script Adý
     // Galeri ve Envanter Yöneticileri (Daha önceki örneklerden)
     public PhotoGalleryManager galleryManager;
     public InventoryManager inventoryManager;
 
     // Fotoðraf çekildiðinde bu metodu çaðýrýn (Dynamic Photo Camera Mini entegrasyonu)
+
+    void Start()
+    {
+        if (photoControllerAsset != null)
+        {
+            // OnPhotoCaptureComplete event'ine OnPhotoCaptured metodumuzu ekle
+            photoControllerAsset.OnPhotoCaptureComplete.AddListener(OnPhotoCaptured);
+            Debug.Log("PhotoCaptureAndDetection, PhotoController'ýn OnPhotoCaptureComplete event'ine abone oldu.");
+        }
+        else
+        {
+            Debug.LogError("PhotoControllerAsset referansý NULL! Lütfen Inspector'dan atayýn. Fotoðraf yakalama event'ine abone olunamadý.");
+        }
+    }
+
+    // Script yok edildiðinde abonelikten çýkmak iyi bir pratiktir
+    void OnDestroy()
+    {
+        if (photoControllerAsset != null)
+        {
+            photoControllerAsset.OnPhotoCaptureComplete.RemoveListener(OnPhotoCaptured);
+        }
+    }
     public void OnPhotoCaptured(Texture2D capturedPhoto)
     {
+        Debug.Log("Özel OnPhotoCaptured metodumuz çaðrýldý!");
         // 1. Fotoðrafý Galeriye Kaydet
         if (galleryManager != null)
         {
             galleryManager.AddPhotoToGallery(capturedPhoto);
         }
+        else
+        {
+            Debug.LogError("GalleryManager referansý NULL! Fotoðraf galeriye eklenemedi.");
+        }
 
         // 2. Fotoðrafý Çekilebilir Objeleri Algýla
-        DetectTaggableObjectsInPhoto(capturedPhoto);
+        if (capturedPhoto != null)
+        {
+            DetectTaggableObjectsInPhoto(capturedPhoto);
+        }
+        else
+        {
+            Debug.LogWarning("Yakalanan fotoðraf null olduðu için objeler algýlanamadý.");
+        }
     }
 
     private void DetectTaggableObjectsInPhoto(Texture2D photo)
@@ -64,7 +99,7 @@ public class PhotoCaptureAndDetection : MonoBehaviour
                 // Iþýn bir þeye çarptý mý?
                 if (Physics.Raycast(ray, out hit, 100f)) // 100f: maksimum ýþýn mesafesi
                 {
-                    // Çarpan objenin "FotoðrafýÇekilebilir" tag'ine sahip olup olmadýðýný kontrol et
+                    // Çarpan objenin "FotoðrafýÇekilebilir" tag'ine sahip olup olmadýðýný kontrol et 
                     if (hit.collider.CompareTag("FotoðrafýÇekilebilir"))
                     {
                         // Ayný objeyi birden fazla kez algýlamamak için kontrol

@@ -191,8 +191,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000002926395}
-  m_SizeDelta: {x: 0, y: 300}
+  m_AnchoredPosition: {x: 0, y: 0.623213}
+  m_SizeDelta: {x: 0, y: 326.98}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &196266520
 MonoBehaviour:
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 100, y: 100}
-  m_Spacing: {x: 0, y: 0}
+  m_Spacing: {x: 10, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &196769722
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1622320054}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999255
+  m_Size: 0.9949224
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -991,6 +991,17 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 3208033112055466466, guid: 1bfe430be7cd91244881566d561ecdea, type: 3}
   m_PrefabInstance: {fileID: 2045010185}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1376603196 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6360382947920477144, guid: 1bfe430be7cd91244881566d561ecdea, type: 3}
+  m_PrefabInstance: {fileID: 2045010185}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87103914d0902b144b1a342bb4b7569b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1399681126
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,6 +1188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   photoCamera: {fileID: 1327558258}
+  photoControllerAsset: {fileID: 1376603196}
   galleryManager: {fileID: 1574730141}
   inventoryManager: {fileID: 1574730139}
 --- !u!114 &1574730141

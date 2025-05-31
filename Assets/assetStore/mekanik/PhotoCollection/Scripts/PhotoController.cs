@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 namespace DynamicPhotoCamera
 {
@@ -11,6 +12,10 @@ namespace DynamicPhotoCamera
     /// Handles screenshot creation, photo storage, and UI interaction.
     public class PhotoController : MonoBehaviour
     {
+        [Header("Custom Events")]
+        [Tooltip("Invoked when a new photo (Texture2D) has been captured and is ready.")]
+        public UnityEvent<Texture2D> OnPhotoCaptureComplete;
+
         #region Component References
         // Main input controller reference
         public InputController inputController;
@@ -246,6 +251,7 @@ namespace DynamicPhotoCamera
         // Creates and saves screenshot
         public void MakeScrenshot(Vector2 mousePosition)
         {
+
             if (movingCard != null || uiManager.cantPhoto)
                 return;
 
@@ -279,6 +285,7 @@ namespace DynamicPhotoCamera
                 croppedScreenshot = new Texture2D(cropSize, cropSize);
                 croppedScreenshot.SetPixels(pixels);
                 croppedScreenshot.Apply();
+                OnPhotoCaptureComplete?.Invoke(croppedScreenshot);
 
                 // Create sprite and photo card
                 screenShotSprite = Sprite.Create(croppedScreenshot, new Rect(0, 0, croppedScreenshot.width, croppedScreenshot.height), new Vector2(0.5f, 0.5f));
