@@ -25,13 +25,6 @@ public class NextLevel : MonoBehaviour
         Debug.Log($"Bir sonraki sahneye geçiliyor: {currentSceneIndex + 1}");
     }
 
-    public void GoToSuspectScene()
-    {
-        // Bir sonraki sahneye geç
-        SceneManager.LoadScene(3);
-        Debug.Log($"Bir sonraki sahneye geçiliyor:");
-    }
-
     // Ýsteðe baðlý: Menüden çýkýþ veya belirli bir ana menü sahnesine dönüþ için
     public void GoToMainMenu()
     {
