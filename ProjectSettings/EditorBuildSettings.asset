@@ -20,4 +20,40 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene2.unity
     guid: 6304360380dd39a4abc3b2f57237de79
+  - enabled: 1
+    path: Assets/Scenes/FinalScenes/FinalScene.unity
+    guid: 682c4437a5141e44686285260180f27f
+  - enabled: 1
+    path: Assets/Scenes/FinalScenes/FinalScene 1.unity
+    guid: 7a521936dda12cc4993e480e18520c30
+  - enabled: 1
+    path: Assets/Scenes/FinalScenes/FinalScene 2.unity
+    guid: 5f1b9cf6989200749a217e7b125cf790
+  - enabled: 1
+    path: Assets/Scenes/FinalScenes/FinalScene 3.unity
+    guid: d2c4c36d94bcce4418f21e66bc768456
+  - enabled: 1
+    path: Assets/Scenes/FinalScenes/FinalScene 4.unity
+    guid: f01b0e6bf1248084b87ffb0dba9bef31
+  - enabled: 1
+    path: Assets/Scenes/FinalScenes/FinalScene 5.unity
+    guid: 48401336ebc6e6e48ae4409918941166
+  - enabled: 1
+    path: Assets/Scenes/FinalScenes/FinalScene 6.unity
+    guid: d8fc0aa8f3f49e84086ea4e3b4e6d267
+  - enabled: 1
+    path: Assets/Scenes/FinalScenes/FinalScene 7.unity
+    guid: 773769d8acb811b4caafad2967e41d2a
+  - enabled: 1
+    path: Assets/Scenes/FinalScenes/FinalScene 8.unity
+    guid: 607af76686fed534d934e4f436c35908
+  - enabled: 1
+    path: Assets/Scenes/FinalScenes/FinalScene 9.unity
+    guid: f01204b7e478e1a47a3feff48cb41552
+  - enabled: 1
+    path: Assets/Scenes/FinalScenes/FinalScene 10.unity
+    guid: d2f9d4f04e930624ba891b61f0408674
+  - enabled: 1
+    path: Assets/Scenes/FinalScenes/FinalScene 11.unity
+    guid: 753662ab6a8fe984faabe37247aee6ff
   m_configObjects: {}

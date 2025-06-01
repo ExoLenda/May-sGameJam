@@ -16,6 +16,8 @@ public class NextLevel : MonoBehaviour
         
     }
 
+    
+    
     public void GoToNextScene()
     {
         // Mevcut sahnenin build index'ini al
@@ -41,5 +43,24 @@ public class NextLevel : MonoBehaviour
     public void SahneIndexIleGec(int sahneIndex)
     {
         SceneManager.LoadScene(sahneIndex);
+    }
+    public void GoToSceneAfterDelay(int sceneIndex)
+    {
+        // Coroutine baþlatýlýyor
+        StartCoroutine(LoadSceneAfterDelayCoroutine(sceneIndex));
+    }
+    private IEnumerator LoadSceneAfterDelayCoroutine(int sceneIndex)
+    {
+        Debug.Log($"Sahne {sceneIndex}'e {3} saniye sonra geçilecek...");
+        yield return new WaitForSeconds(3); // Belirtilen süre kadar bekle
+
+        // Gecikme bittikten sonra sahneye geç
+        if (sceneIndex < 0 || sceneIndex >= SceneManager.sceneCountInBuildSettings)
+        {
+            Debug.LogError($"Geçersiz sahne index'i: {sceneIndex}. Build Settings'deki sahne sayýsýný kontrol edin.");
+            yield break; // Coroutine'i sonlandýr
+        }
+        SceneManager.LoadScene(sceneIndex);
+        Debug.Log($"Gecikme sonrasý sahneye geçildi: {sceneIndex}");
     }
 }
