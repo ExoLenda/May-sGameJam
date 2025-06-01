@@ -38,4 +38,8 @@ public class NextLevel : MonoBehaviour
         SceneManager.LoadScene("MainMenu"); // "MainMenu" sizin ana menü sahnenizin adý olmalý
         Debug.Log("Ana menüye dönülüyor.");
     }
+    public void SahneIndexIleGec(int sahneIndex)
+    {
+        SceneManager.LoadScene(sahneIndex);
+    }
 }
