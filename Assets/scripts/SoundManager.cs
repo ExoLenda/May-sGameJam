@@ -12,4 +12,8 @@ public class SoundManager : MonoBehaviour
     public void PlaySound(AudioClip _sound) {
         audiosource.PlayOneShot(_sound);
     }
+
+    public void StopSound() {
+        audiosource.Stop();
+    }
 }

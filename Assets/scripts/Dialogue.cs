@@ -5,6 +5,8 @@ using TMPro;
 
 public class Dialogue : MonoBehaviour
 {
+    [SerializeField] SoundManager sound;
+    [SerializeField] AudioClip audio;
     public TextMeshProUGUI textComponent;
     public string[] lines;
     public float textspeed;
@@ -26,11 +28,15 @@ public class Dialogue : MonoBehaviour
             if(textComponent.text == lines[index])
             {
                 NextLine();
+                
             }
             else
             {
                 StopAllCoroutines();
                 textComponent.text = lines[index];
+                
+
+
             }
         }
     }
@@ -47,6 +53,7 @@ public class Dialogue : MonoBehaviour
         {
             textComponent.text += c;
             yield return new WaitForSeconds(textspeed);
+
         }
     }
 
@@ -54,12 +61,14 @@ public class Dialogue : MonoBehaviour
     {
         if(index < lines.Length - 1)
         {
+           
             index++;
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
         }
         else
         {
+           
             gameObject.SetActive(false);
         }
     }
