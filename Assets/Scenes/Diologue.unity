@@ -378,6 +378,7 @@ MonoBehaviour:
   textComponent: {fileID: 200057642}
   lines:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - 'Chef(sen): Durum nedir?'
   - "Komiser: Olay yerinde ifadesi al\u0131nan market \xE7al\u0131\u015Fan\u0131,
     vardiya bitiminden yar\u0131m saat sonra kadar unuttu\u011Fu bir e\u015Fyas\u0131n\u0131
@@ -390,6 +391,8 @@ MonoBehaviour:
   - "Chef: Hi\xE7bir izin kaybolmas\u0131n\u0131 istemeyiz."
   textspeed: 0.01
 =======
+=======
+>>>>>>> Stashed changes
   - 
   - 
   textspeed: 0.1
