@@ -131,14 +131,23 @@ TextureImporter:
         width: 296
         height: 391
       alignment: 0
+<<<<<<< Updated upstream
       pivot: {x: 0.5, y: 0.5}
+=======
+      pivot: {x: 0, y: 0}
+>>>>>>> Stashed changes
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: d29333fa87034334a9dd6fa1e90987e9
       internalID: -2088150107
+=======
+      spriteID: 2eaf3eed2d909344a8cffff6ff6e3668
+      internalID: 1789842149
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -148,18 +157,32 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 611
+<<<<<<< Updated upstream
         y: 607
         width: 296
         height: 398
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 7, z: 0, w: 0}
+=======
+        y: 613
+        width: 296
+        height: 392
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+>>>>>>> Stashed changes
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: c348a8b64cbf3d84d84676a12eb379e8
       internalID: -1520209917
+=======
+      spriteID: f7c66e9e6b59eb24190e5b7ffe687039
+      internalID: 311233983
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -173,14 +196,23 @@ TextureImporter:
         width: 296
         height: 391
       alignment: 0
+<<<<<<< Updated upstream
       pivot: {x: 0.5, y: 0.5}
+=======
+      pivot: {x: 0, y: 0}
+>>>>>>> Stashed changes
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: d58064613a724a74092284200e2d62c4
       internalID: -1817264198
+=======
+      spriteID: fc883225f07f8a54fa57c903fddd7fb8
+      internalID: 1332397512
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -189,6 +221,7 @@ TextureImporter:
       name: "Zanl\u0131Tablosu2_3"
       rect:
         serializedVersion: 2
+<<<<<<< Updated upstream
         x: 1417
         y: 612
         width: 302
@@ -196,12 +229,47 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 6, y: 0, z: 5, w: 0}
+=======
+        x: 1424
+        y: 588
+        width: 295
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 26, z: 0, w: 0}
+>>>>>>> Stashed changes
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: 4c1c852fa08db1c408052f4beba2eda4
       internalID: -666538608
+=======
+      spriteID: 6904266692181374d9bfb760ad190d6a
+      internalID: -1408711292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Zanl\u0131Tablosu2_4"
+      rect:
+        serializedVersion: 2
+        x: 1751
+        y: 629
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1da5e2808921c7a4ab6f04545af0b20e
+      internalID: 24848026
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -217,12 +285,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+<<<<<<< Updated upstream
       "Zanl\u0131Tablosu2_0": -2088150107
       "Zanl\u0131Tablosu2_1": -1520209917
       "Zanl\u0131Tablosu2_2": -1817264198
       "Zanl\u0131Tablosu2_3": -666538608
       "Zanl\u0131Tablosu2_4": -1579217816
       "Zanl\u0131Tablosu2_5": -255143180
+=======
+      "Zanl\u0131Tablosu2_0": 1789842149
+      "Zanl\u0131Tablosu2_1": 311233983
+      "Zanl\u0131Tablosu2_2": 1332397512
+      "Zanl\u0131Tablosu2_3": -1408711292
+      "Zanl\u0131Tablosu2_4": 24848026
+      "Zanl\u0131Tablosu2_5": -505697804
+      "Zanl\u0131Tablosu2_6": 960898735
+>>>>>>> Stashed changes
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
