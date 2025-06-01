@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Suspects.unity
     guid: 39136ae30595e3d4fbbf935f3f7728c5
+  - enabled: 1
+    path: Assets/Scenes/SampleScene2.unity
+    guid: 6304360380dd39a4abc3b2f57237de79
   m_configObjects: {}
