@@ -10,12 +10,14 @@ public class Dialogue : MonoBehaviour
     public TextMeshProUGUI textComponent;
     public string[] lines;
     public float textspeed;
+    
 
     private int index;
 
     // Start is called before the first frame update
     void Start()
     {
+        
         textComponent.text = string.Empty;
         startDialogue();
     }
@@ -25,9 +27,12 @@ public class Dialogue : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            
             if(textComponent.text == lines[index])
             {
+               
                 NextLine();
+                
                 
             }
             else
@@ -38,6 +43,7 @@ public class Dialogue : MonoBehaviour
 
 
             }
+            
         }
     }
 
