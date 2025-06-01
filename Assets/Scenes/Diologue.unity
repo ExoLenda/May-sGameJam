@@ -377,9 +377,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 200057642}
   lines:
-  - 'Police: We need you chef'
-  - 'Chef(you): Ok. I will be there in 10 minutes.'
-  textspeed: 0.1
+  - 'Chef(sen): Durum nedir?'
+  - "Komiser: Olay yerinde ifadesi al\u0131nan market \xE7al\u0131\u015Fan\u0131,
+    vardiya bitiminden yar\u0131m saat sonra kadar unuttu\u011Fu bir e\u015Fyas\u0131n\u0131
+    almak i\xE7in geri d\xF6nd\xFC\u011F\xFCnde market m\xFCd\xFCr\xFCn\xFC yerde
+    \xF6l\xFC olarak buldu\u011Funu s\xF6yledi. \xC7al\u0131\u015Fan \xE7apraz sorgulama
+    i\xE7in merkeze g\xF6nderildi. G\xFCvenlik \u015Feridi \xE7ekildi, olay yeri
+    inceleme i\xE7in sizi bekliyoruz. \u015Euan i\xE7in olay yerinin konumu sakin,
+    bas\u0131n\u0131n haberi yok."
+  - 'Chef: Hemen geliyorum.'
+  - "Chef: Hi\xE7bir izin kaybolmas\u0131n\u0131 istemeyiz."
+  textspeed: 0.01
 --- !u!114 &497710610
 MonoBehaviour:
   m_ObjectHideFlags: 0
