@@ -11,7 +11,7 @@ public class PhotoGalleryManager : MonoBehaviour
     [Tooltip("Galeriyi içeren ana UI Paneli.")]
     public GameObject galleryPanel;
     [Tooltip("Fotoðraf kartlarýnýn ekleneceði kaydýrýlabilir alanýn 'Content' objesi.")]
-    public Transform photoCardHolder; // ScrollView'in Content objesi
+    public Transform photoCardHolder; // ScrollView'in Content objesi (GridLayoutGroup burada olmalý)
     [Tooltip("Galeride gösterilecek tek bir fotoðraf kartýnýn prefab'ý.")]
     public GameObject photoDisplayItemPrefab; // Daha önce oluþturduðumuz PhotoDisplayItem prefab'ý
 
@@ -23,6 +23,12 @@ public class PhotoGalleryManager : MonoBehaviour
     [Header("Diðer Referanslar")]
     [Tooltip("Sahnedeki PhotoController script'ine referans.")]
     public PhotoController photoController; // PhotoController'dan gelen Texture2D'yi yakalamak için
+
+    [Header("Galeri Ayarlarý")]
+    [Tooltip("Oyun baþladýðýnda diskteki fotoðraflarý otomatik yükle?")]
+    public bool loadPhotosOnStart = false; // BU AYAR ÝSTEÐÝNÝZE GÖRE DEÐÝÞTÝRÝLMELÝ
+    [Tooltip("Oyun her baþladýðýnda diskteki tüm fotoðraflarý sil? (Uygulama yolu altýndan)")]
+    public bool clearPhotosOnGameStart = false; // YENÝ EKLENDÝ - DÝSKTEM DE SÝLME ÝSTEÐÝNÝZ ÝÇÝN
 
     // --- ÖZEL DEÐÝÞKENLER ---
     private List<Sprite> loadedPhotoSprites = new List<Sprite>(); // Yüklenen tüm sprite'larý tutar
@@ -61,8 +67,22 @@ public class PhotoGalleryManager : MonoBehaviour
             Debug.LogError("[PhotoGalleryManager] PhotoController referansý atanmadý! Lütfen Inspector'dan atayýn.");
         }
 
-        // Kayýtlý fotoðraflarý yükle
-        LoadAllPhotosFromDisk();
+        // YENÝ EKLENDÝ: Oyun baþladýðýnda diskteki fotoðraflarý sil
+        if (clearPhotosOnGameStart)
+        {
+            ClearAllPhotosFromDisk(); // Diskten de sil
+        }
+
+        // YENÝ EKLENDÝ: Eðer 'loadPhotosOnStart' true ise kayýtlý fotoðraflarý yükle
+        if (loadPhotosOnStart)
+        {
+            LoadAllPhotosFromDisk();
+        }
+        else
+        {
+            // Eðer diskten yükleme yapýlmýyorsa, UI'ý temizle (zaten LoadAllPhotosFromDisk içinde var ama burada da garantileyelim)
+            ClearGalleryUI();
+        }
     }
 
     void OnDestroy()
@@ -73,6 +93,17 @@ public class PhotoGalleryManager : MonoBehaviour
             photoController.OnPhotoCaptureComplete.RemoveListener(AddPhotoToGallery);
             Debug.Log("[PhotoGalleryManager] PhotoController'ýn OnPhotoCaptureComplete event'inden abonelik kaldýrýldý.");
         }
+        // Uygulama kapanýrken sprite'larý ve iliþkili texture'larý temizle
+        // Bu, belleði düzgün bir þekilde serbest býrakýr.
+        foreach (Sprite sprite in loadedPhotoSprites)
+        {
+            if (sprite != null && sprite.texture != null)
+            {
+                Destroy(sprite.texture);
+            }
+            Destroy(sprite);
+        }
+        loadedPhotoSprites.Clear();
     }
 
     // --- FOTOÐRAF KAYDETME / YÜKLEME METOTLARI ---
@@ -88,7 +119,6 @@ public class PhotoGalleryManager : MonoBehaviour
             Debug.LogError("[PhotoGalleryManager] AddPhotoToGallery metoduna null Texture2D geldi!");
             return;
         }
-
 
         // Benzersiz bir dosya adý oluþtur
         string fileName = $"photo_{System.DateTime.Now.ToString("yyyyMMdd_HHmmss_fff")}.png"; // Tarih ve saat ile benzersiz isim
@@ -110,11 +140,6 @@ public class PhotoGalleryManager : MonoBehaviour
         // Yeni kaydedilen fotoðrafý galeri UI'ýna ekle
         Sprite newSprite = Sprite.Create(photoTexture, new Rect(0, 0, photoTexture.width, photoTexture.height), Vector2.one * 0.5f);
 
-        // ÖNEMLÝ: Texture2D artýk Sprite'a dönüþtürüldü, bu yüzden original Texture2D'yi yok edebiliriz.
-        // Ancak bu Texture2D PhotoController'dan geldiði için, PhotoController'ýn kendisinin
-        // uygun zamanda ReleaseTemporary veya Destroy yapmasý daha iyidir.
-        // Eðer PhotoController'da Destroy edilmiyorsa burada yapabiliriz: Destroy(photoTexture);
-
         loadedPhotoSprites.Add(newSprite); // Listeye ekle
 
         // UI'a yeni fotoðrafý ekle
@@ -124,14 +149,11 @@ public class PhotoGalleryManager : MonoBehaviour
     /// <summary>
     /// Diskteki tüm kayýtlý fotoðraflarý yükler ve galeriye ekler.
     /// </summary>
-    private void LoadAllPhotosFromDisk()
+    public void LoadAllPhotosFromDisk()
     {
-        // Öncelikle mevcut tüm fotoðraflarý temizle
-        foreach (Transform child in photoCardHolder)
-        {
-            Destroy(child.gameObject);
-        }
-        loadedPhotoSprites.Clear();
+        // Öncelikle mevcut tüm fotoðraflarý ve UI objelerini temizle
+        ClearGalleryUI(); // YENÝ EKLENDÝ: UI'ý temizlemek için ayrý bir metot çaðýr
+        loadedPhotoSprites.Clear(); // Sprite listesini de temizle
 
         if (!Directory.Exists(photosFolderPath))
         {
@@ -161,6 +183,56 @@ public class PhotoGalleryManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Diskteki tüm fotoðraf dosyalarýný siler.
+    /// </summary>
+    public void ClearAllPhotosFromDisk() // YENÝ METOT
+    {
+        ClearGalleryUI(); // Önce UI'daki objeleri temizle
+        loadedPhotoSprites.Clear(); // Bellekteki sprite'larý temizle
+
+        if (Directory.Exists(photosFolderPath))
+        {
+            try
+            {
+                // Klasördeki tüm dosyalarý sil
+                string[] photoFiles = Directory.GetFiles(photosFolderPath, "*.png");
+                foreach (string filePath in photoFiles)
+                {
+                    File.Delete(filePath);
+                }
+                Debug.Log($"[PhotoGalleryManager] Diskteki tüm fotoðraflar silindi: {photosFolderPath}");
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError($"[PhotoGalleryManager] Diskteki fotoðraflar silinirken hata oluþtu: {e.Message}");
+            }
+        }
+    }
+
+    /// <summary>
+    /// Galerideki tüm fotoðraf kartý UI objelerini temizler.
+    /// </summary>
+    private void ClearGalleryUI() // AYRI BÝR METOT HALÝNE GETÝRÝLDÝ
+    {
+        // photoCardHolder altýndaki tüm çocuk objeleri sil
+        // Tersten gitmek güvenlidir, çünkü objeler silindikçe indeksleri deðiþir.
+        for (int i = photoCardHolder.childCount - 1; i >= 0; i--)
+        {
+            GameObject objToDestroy = photoCardHolder.GetChild(i).gameObject;
+            // Eðer objede bir SpriteRenderer veya Image bileþeni varsa,
+            // atanan Sprite ve Texture'ý da temizlemek bellek sýzýntýlarýný önler.
+            Image img = objToDestroy.GetComponent<Image>();
+            if (img != null && img.sprite != null && img.sprite.texture != null)
+            {
+                Destroy(img.sprite.texture); // Texture'ý yok et
+                Destroy(img.sprite); // Sprite'ý yok et
+            }
+            Destroy(objToDestroy);
+        }
+        Debug.Log("[PhotoGalleryManager] Galeri UI'ý temizlendi.");
+    }
+
+    /// <summary>
     /// Bir Sprite'tan yeni bir UI fotoðraf kartý oluþturur ve galeriye ekler.
     /// </summary>
     /// <param name="sprite">Gösterilecek fotoðrafýn Sprite'ý.</param>
@@ -178,7 +250,12 @@ public class PhotoGalleryManager : MonoBehaviour
         }
 
         GameObject photoCard = Instantiate(photoDisplayItemPrefab, photoCardHolder);
-        Image photoImage = photoCard.GetComponentInChildren<Image>(true);
+        // Prefabýn kendisinde Image varsa doðrudan GetComponent, yoksa Children içinde ara
+        Image photoImage = photoCard.GetComponent<Image>();
+        if (photoImage == null) // Eðer prefab'ýn kendisi Image deðilse çocuklarýnda ara
+        {
+            photoImage = photoCard.GetComponentInChildren<Image>(true);
+        }
 
         if (photoImage != null)
         {
@@ -186,7 +263,7 @@ public class PhotoGalleryManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError($"[PhotoGalleryManager] PhotoDisplayItem Prefab'ýnda Image bileþeni bulunamadý! Prefab'ý kontrol edin: {photoCard.name}");
+            Debug.LogError($"[PhotoGalleryManager] PhotoDisplayItem Prefab'ýnda veya çocuklarýnda Image bileþeni bulunamadý! Prefab'ý kontrol edin: {photoCard.name}");
             Destroy(photoCard); // Yanlýþ prefab ise yok et
             return;
         }
@@ -214,6 +291,9 @@ public class PhotoGalleryManager : MonoBehaviour
         if (galleryPanel != null)
         {
             galleryPanel.SetActive(true);
+            // Eðer galeri açýldýðýnda yeni çekilen fotoðraflarý görmek istiyorsanýz,
+            // veya diskteki mevcut fotoðraflarý tekrar yüklemek istiyorsanýz burada çaðýrabilirsiniz:
+            // LoadAllPhotosFromDisk();
             Debug.Log("[PhotoGalleryManager] Galeri açýldý.");
         }
     }
